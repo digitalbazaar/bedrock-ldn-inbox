@@ -1,0 +1,30 @@
+{
+  "name": "bedrock-ldn-inbox",
+  "version": "1.0.0-0",
+  "description": "Bedrock Linked Data Notifications Inbox",
+  "main": "./lib",
+  "scripts": {
+    "test": "node ./test/test.js test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/bedrock-ldn-inbox.git"
+  },
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "http://digitalbazaar.com"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalbazaar/bedrock-ldn-inbox/issues"
+  },
+  "homepage": "https://github.com/digitalbazaar/bedrock-ldn-inbox",
+  "dependencies": {
+    "async": "^2.0.0"
+  },
+  "peerDependencies": {
+    "bedrock": "^1.4.0",
+    "bedrock-mongodb": "^3.2.0",
+    "bedrock-permission": "^2.4.0"
+  }
+}
