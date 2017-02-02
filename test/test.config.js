@@ -4,7 +4,7 @@
  * Copyright (c) 2017 Digital Bazaar, Inc. All rights reserved.
  */
 const bedrock = require('bedrock');
-const config = bedrock.config.main;
+const config = bedrock.config;
 const path = require('path');
 
 config.mocha.tests.push(path.join(__dirname, 'mocha'));
