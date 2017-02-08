@@ -5,7 +5,8 @@
   "description": "Bedrock LDN inbox test",
   "main": "test",
   "scripts": {
-    "test": "node --preserve-symlinks test.js test"
+    "test": "node --preserve-symlinks test.js test",
+    "ci-test": "node --preserve-symlinks test.js test --mocha-reporter=tap"
   },
   "repository": {
     "type": "git",
@@ -21,9 +22,12 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-ldn-inbox",
   "dependencies": {
+    "async": "^2.1.4",
     "bedrock": "^1.4.0",
+    "bedrock-identity": "^4.5.1",
     "bedrock-mongodb": "^3.2.0",
     "bedrock-permission": "^2.4.0",
-    "bedrock-test": "^1.0.0"
+    "bedrock-test": "^1.0.0",
+    "uuid": "^3.0.1"
   }
 }

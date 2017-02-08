@@ -3,9 +3,6 @@
   "version": "1.0.0-0",
   "description": "Bedrock Linked Data Notifications Inbox",
   "main": "./lib",
-  "scripts": {
-    "test": "node ./test/test.js test"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/digitalbazaar/bedrock-ldn-inbox.git"
@@ -20,7 +17,7 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-ldn-inbox",
   "dependencies": {
-    "async": "^2.0.0"
+    "async": "^2.1.4"
   },
   "peerDependencies": {
     "bedrock": "^1.4.0",
