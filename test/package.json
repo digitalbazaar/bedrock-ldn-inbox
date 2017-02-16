@@ -6,7 +6,8 @@
   "main": "test",
   "scripts": {
     "test": "node --preserve-symlinks test.js test",
-    "ci-test": "node --preserve-symlinks test.js test --mocha-reporter=tap"
+    "ci-test": "node --preserve-symlinks test.js test --mocha-reporter=tap",
+    "watch": "grunt watch"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,10 @@
     "bedrock-mongodb": "^3.2.0",
     "bedrock-permission": "^2.4.0",
     "bedrock-test": "^1.0.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-shell": "^2.1.0",
     "uuid": "^3.0.1"
   }
 }

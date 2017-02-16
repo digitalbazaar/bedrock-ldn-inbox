@@ -10,7 +10,6 @@ module.exports = mock;
 
 const identities = mock.identities = {};
 let userName;
-let keyId;
 
 userName = 'regularUser';
 identities[userName] = {};
@@ -27,6 +26,17 @@ identities[userName].identity.sysResourceRole.push({
   sysRole: 'bedrock-ldn-inbox.test'
 });
 
-mock.inbox = {};
+mock.inbox = {
+  type: 'Container',
+  '@context': [
+    'https://www.w3.org/ns/ldp',
+    {
+      owner: {
+        '@id': 'https://w3id.org/security#owner',
+        '@type': '@id'
+      }
+    }
+  ]
+};
 
 mock.message = {};

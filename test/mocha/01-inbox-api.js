@@ -359,14 +359,57 @@ describe('bedrock-ldn-inbox inbox API', () => {
         actor = result;
         done();
       }));
-      it('should return `PermissionDenied`', done => {
-        brLdnInbox.inboxes.getAll(actor, (err, result) => {
-          expect(err).to.be.ok;
-          expect(result).to.not.be.ok;
-          err.name.should.equal('PermissionDenied');
-          err.details.sysPermission.should.equal('LDN_INBOX_ACCESS');
-          done();
-        });
+      it('should return `[]` if actor does not own any inboxes', done => {
+        const inbox = helpers.createInbox(mockData);
+        const owner = mockData.identities.adminUser.identity.id;
+        async.auto({
+          add: callback => brLdnInbox.inboxes.add(
+            null, inbox, {owner: owner}, callback),
+          get: ['add', (results, callback) => brLdnInbox.inboxes.getAll(
+            actor, (err, result) => {
+              expect(err).to.not.be.ok;
+              expect(result).to.be.ok;
+              result.should.be.an('array');
+              result.should.have.length(0);
+              callback();
+            })]
+        }, done);
+      });
+      it('returns inboxes based on owner query', done => {
+        const inbox = helpers.createInbox(mockData);
+        const owner = mockData.identities.regularUser.identity.id;
+        async.auto({
+          add: callback => brLdnInbox.inboxes.add(
+            null, inbox, {owner: owner}, callback),
+          get: ['add', (results, callback) => brLdnInbox.inboxes.getAll(
+            actor, {owner: database.hash(owner)}, (err, result) => {
+              expect(err).to.not.be.ok;
+              expect(result).to.be.ok;
+              result.should.be.an('array');
+              result.should.have.length(1);
+              Object.keys(result[0].inbox).should.have.same.members([
+                'id', '@context', 'type'
+              ]);
+              callback();
+            })]
+        }, done);
+      });
+      it('returns inboxes when projection does not include meta', done => {
+        const inbox = helpers.createInbox(mockData);
+        const owner = mockData.identities.regularUser.identity.id;
+        async.auto({
+          add: callback => brLdnInbox.inboxes.add(
+            null, inbox, {owner: owner}, callback),
+          get: ['add', (results, callback) => brLdnInbox.inboxes.getAll(
+            actor, {}, {'inbox.id': true}, (err, result) => {
+              expect(err).to.not.be.ok;
+              expect(result).to.be.ok;
+              result.should.be.an('array');
+              result.should.have.length(1);
+              Object.keys(result[0].inbox).should.have.same.members(['id']);
+              callback();
+            })]
+        }, done);
       });
     }); // end regular user
     describe('admin user actor', () => {

@@ -34,7 +34,7 @@ api.createMessage = function(mockData, options = {addId: true}) {
 api.createIdentity = function(options) {
   var userName = options.userName || uuid();
   var newIdentity = {
-    id: api.IDENTITY_BASE_PATH + '/' + userName,
+    id: api.IDENTITY_BASE_PATH + userName,
     type: 'Identity',
     sysSlug: userName,
     label: userName,
