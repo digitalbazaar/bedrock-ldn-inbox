@@ -1,5 +1,12 @@
 # bedrock-ldn-inbox ChangeLog
 
+## 1.0.2 - 2017-02-22
+
+### Changed
+
+- Change `getAll` permission checking. The API no longer requires admin
+permissions.
+
 ## 1.0.1 - 2017-02-08
 
 ### Fixed
