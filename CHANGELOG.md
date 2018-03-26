@@ -1,5 +1,7 @@
 # bedrock-ldn-inbox ChangeLog
 
+## 1.0.3 - 2018-03-26
+
 ### Changed
 - Update `bedrock-mongodb` peer dependency.
 - Update test dependencies.
