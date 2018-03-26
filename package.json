@@ -1,6 +1,6 @@
 {
   "name": "bedrock-ldn-inbox",
-  "version": "1.0.3-0",
+  "version": "1.0.3",
   "description": "Bedrock Linked Data Notifications Inbox",
   "main": "./lib",
   "repository": {
