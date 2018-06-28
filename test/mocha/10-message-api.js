@@ -1,7 +1,6 @@
 /*!
  * Copyright (c) 2017-2018 Digital Bazaar, Inc. All rights reserved.
  */
-/* global should */
 'use strict';
 
 const async = require('async');
