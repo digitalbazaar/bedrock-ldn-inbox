@@ -24,7 +24,7 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-ldn-inbox",
   "dependencies": {
     "async": "^2.1.4",
-    "bedrock": "^1.4.0",
+    "bedrock": "^1.8.0",
     "bedrock-identity": "^4.5.1",
     "bedrock-ldn-inbox": "file:..",
     "bedrock-mongodb": "^5.1.2",

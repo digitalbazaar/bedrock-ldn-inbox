@@ -20,7 +20,7 @@
     "async": "^2.1.4"
   },
   "peerDependencies": {
-    "bedrock": "^1.4.0",
+    "bedrock": "^1.8.0",
     "bedrock-mongodb": "3.x - 5.x",
     "bedrock-permission": "^2.4.0"
   }
