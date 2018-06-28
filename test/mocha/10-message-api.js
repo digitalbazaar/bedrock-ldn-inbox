@@ -64,8 +64,8 @@ describe('bedrock-ldn-inbox message API', () => {
               result.meta.status.should.equal('active');
               callback();
             }),
-          test: ['add', (results, callback) => messageCollection.findOne({
-            id: database.hash(message.id)}, {}, (err, result) => {
+          test: ['add', (results, callback) => messageCollection.findOne(
+            {id: database.hash(message.id)}, {}, (err, result) => {
               expect(err).to.not.be.ok;
               expect(result).to.be.ok;
               result.message.should.deep.equal(message);
@@ -122,8 +122,8 @@ describe('bedrock-ldn-inbox message API', () => {
               result.meta.status.should.equal('active');
               callback();
             }),
-          test: ['add', (results, callback) => messageCollection.findOne({
-            id: database.hash(message.id)}, {}, (err, result) => {
+          test: ['add', (results, callback) => messageCollection.findOne(
+            {id: database.hash(message.id)}, {}, (err, result) => {
               expect(err).to.not.be.ok;
               expect(result).to.be.ok;
               result.message.should.deep.equal(message);
@@ -396,8 +396,8 @@ describe('bedrock-ldn-inbox message API', () => {
             })
           ],
           test: ['remove', (results, callback) =>
-            messageCollection.findOne({
-              id: database.hash(message.id)}, {}, (err, result) => {
+            messageCollection.findOne(
+              {id: database.hash(message.id)}, {}, (err, result) => {
                 expect(err).to.not.be.ok;
                 result.message.should.deep.equal(message);
                 should.exist(result.meta);
@@ -438,8 +438,8 @@ describe('bedrock-ldn-inbox message API', () => {
             })
           ],
           test: ['remove', (results, callback) =>
-            messageCollection.findOne({
-              id: database.hash(message.id)}, {}, (err, result) => {
+            messageCollection.findOne(
+              {id: database.hash(message.id)}, {}, (err, result) => {
                 expect(err).to.not.be.ok;
                 result.message.should.deep.equal(message);
                 should.exist(result.meta);
@@ -484,8 +484,8 @@ describe('bedrock-ldn-inbox message API', () => {
             })
           ],
           test: ['move', (results, callback) =>
-            messageCollection.findOne({
-              id: database.hash(message.id)}, {}, (err, result) => {
+            messageCollection.findOne(
+              {id: database.hash(message.id)}, {}, (err, result) => {
                 expect(err).to.not.be.ok;
                 result.message.should.deep.equal(message);
                 should.exist(result.meta);
@@ -518,8 +518,8 @@ describe('bedrock-ldn-inbox message API', () => {
             })
           ],
           test: ['move', (results, callback) =>
-            messageCollection.findOne({
-              id: database.hash(message.id)}, {}, (err, result) => {
+            messageCollection.findOne(
+              {id: database.hash(message.id)}, {}, (err, result) => {
                 expect(err).to.not.be.ok;
                 result.message.should.deep.equal(message);
                 should.exist(result.meta);
@@ -584,8 +584,8 @@ describe('bedrock-ldn-inbox message API', () => {
             })
           ],
           test: ['move', (results, callback) =>
-            messageCollection.findOne({
-              id: database.hash(message.id)}, {}, (err, result) => {
+            messageCollection.findOne(
+              {id: database.hash(message.id)}, {}, (err, result) => {
                 expect(err).to.not.be.ok;
                 result.message.should.deep.equal(message);
                 should.exist(result.meta);

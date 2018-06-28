@@ -32,8 +32,8 @@ describe('bedrock-ldn-inbox inbox API', () => {
               result.inbox.id.should.equal(inbox.id);
               callback(err, result);
             }),
-          test: ['add', (results, callback) => inboxCollection.findOne({
-            id: database.hash(inbox.id)}, {}, (err, result) => {
+          test: ['add', (results, callback) => inboxCollection.findOne(
+            {id: database.hash(inbox.id)}, {}, (err, result) => {
               expect(err).to.not.be.ok;
               result.inbox.should.deep.equal(inbox);
               should.exist(result.meta);
@@ -94,8 +94,8 @@ describe('bedrock-ldn-inbox inbox API', () => {
               callback(err, result);
             }),
           test: ['add', (results, callback) =>
-            inboxCollection.findOne({
-              id: database.hash(inbox.id)}, {}, (err, result) => {
+            inboxCollection.findOne(
+              {id: database.hash(inbox.id)}, {}, (err, result) => {
                 expect(err).to.not.be.ok;
                 result.inbox.should.deep.equal(inbox);
                 should.exist(result.meta);
@@ -468,8 +468,8 @@ describe('bedrock-ldn-inbox inbox API', () => {
             })
           ],
           test: ['remove', (results, callback) =>
-            inboxCollection.findOne({
-              id: database.hash(inbox.id)}, {}, (err, result) => {
+            inboxCollection.findOne(
+              {id: database.hash(inbox.id)}, {}, (err, result) => {
                 expect(err).to.not.be.ok;
                 result.inbox.should.deep.equal(inbox);
                 should.exist(result.meta);
@@ -511,8 +511,8 @@ describe('bedrock-ldn-inbox inbox API', () => {
             })
           ],
           test: ['remove', (results, callback) =>
-            inboxCollection.findOne({
-              id: database.hash(inbox.id)}, {}, (err, result) => {
+            inboxCollection.findOne(
+              {id: database.hash(inbox.id)}, {}, (err, result) => {
                 expect(err).to.not.be.ok;
                 result.inbox.should.deep.equal(inbox);
                 should.exist(result.meta);

@@ -32,8 +32,8 @@ api.createMessage = function(mockData, options = {addId: true}) {
 };
 
 api.createIdentity = function(options) {
-  var userName = options.userName || uuid();
-  var newIdentity = {
+  const userName = options.userName || uuid();
+  const newIdentity = {
     id: api.IDENTITY_BASE_PATH + userName,
     type: 'Identity',
     sysSlug: userName,
@@ -130,13 +130,14 @@ function insertTestData(mockData, callback) {
   async.forEachOf(mockData.identities, (identity, key, callback) =>
     async.parallel([
       callback => brIdentity.insert(null, identity.identity, callback)
-    ], callback), err => {
-      if(err) {
-        if(!database.isDuplicateError(err)) {
-          // duplicate error means test data is already loaded
-          return callback(err);
-        }
+    ], callback),
+  err => {
+    if(err) {
+      if(!database.isDuplicateError(err)) {
+        // duplicate error means test data is already loaded
+        return callback(err);
       }
-      callback();
-    }, callback);
+    }
+    callback();
+  }, callback);
 }
