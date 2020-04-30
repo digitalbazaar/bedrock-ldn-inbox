@@ -17,11 +17,17 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-ldn-inbox",
   "dependencies": {
-    "async": "^2.1.4"
+    "async": "^2.1.4",
+    "snyk": "^1.316.1"
   },
   "peerDependencies": {
     "bedrock": "^1.8.0",
     "bedrock-mongodb": "3.x - 5.x",
     "bedrock-permission": "^2.4.0"
-  }
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
